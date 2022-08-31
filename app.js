@@ -10,22 +10,30 @@ const width = 10
 const height = 20
 let currentPosition = 4
 
-
 // control key for moving current block
 function moveBlock(e) {
-    switch (true) {
-        case e.key == "ArrowLeft":
-            moveLeft()
-            break;
-        case e.key == "ArrowRight":   
-            moveRight()
-            break;
-        case e.key == "ArrowUp":   
-            rotate()
-            break;
-        case e.key == "ArrowDown":   
-            moveDown()
-            break;
+    // switch (true) {
+    //     case e.key == "ArrowLeft":
+    //         moveLeft()
+    //         break;
+    //     case e.key == "ArrowRight":   
+    //         moveRight()
+    //         break;
+    //     case e.key == "ArrowUp":   
+    //         rotate()
+    //         break;
+    //     case e.key == "ArrowDown":   
+    //         moveDown()
+    //         break;
+    // }
+    if (e.key == "ArrowLeft" || e.target.classList == "left") {
+        moveLeft()
+    } else if (e.key == "ArrowRight" || e.target.classList == "right") {
+        moveRight()
+    } else if (e.key == "ArrowUp" || e.target.classList == "up") {
+        rotate()
+    } else if (e.key == "ArrowDown" || e.target.classList == "down") {
+        moveDown()
     }
 }
 
@@ -273,5 +281,7 @@ function display() {
 moveDownId = setInterval(moveDown,400)
 
 document.addEventListener("keyup",moveBlock)
+document.addEventListener("mousedown",moveBlock)
+
 
 })

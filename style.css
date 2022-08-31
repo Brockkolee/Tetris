@@ -1,9 +1,13 @@
  body {
-     display: grid;    
-     grid-template-columns: 1fr 10fr;
+   font-family: "Poppins", sans-serif;
+}
+
+.display {
+   flex:1;
 }
  
  .grid {
+   flex: 2;
     border: black solid 1px ;
     display: grid;
     height: 80vmin;
@@ -14,21 +18,78 @@
 
 
  .block {
-    background-color: purple;
+   background-color: #A5F1E9;
+   border: #FFF solid 1px ;
+
  }
 
  .frozen {
-    background-color: blue;
+    background-color: #7FBCD2;
  }
 
  .bottom {
-    background-color: green;
+    background-color: #7FBCD2;
+ }
+
+ .container {
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
  }
 
  .display-grid {
+   flex: 1;
     height: 10vmin;;
     width: 10vmin;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+
+}  
+
+.game {
+   margin-right: 20vh;
+   display: flex;
+   gap: 20px;
 }
+
+.control {
+   height: 10em;
+   display: flex;
+}
+
+.control > * {
+   flex: 1 1 100%;
+}
+
+.control > div {
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+}
+
+.control > div > button {
+  height: 100%
+}
+
+button {
+   width: 5em;
+   font-family: "Poppins", sans-serif;
+
+}
+
+.game-control {
+   margin: auto;
+   margin-left: 40px;
+}
+
+.game-control h1 {
+   text-align: center;
+}
+
+
+
+
+
